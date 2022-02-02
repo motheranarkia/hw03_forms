@@ -50,7 +50,6 @@ def profile(request, username):
 
 
 def post_detail(request, post_id):
-    cut_str = 30
     post = get_object_or_404(Post, pk=post_id)
     username_obj = User.objects.get(username=post.author)
     posts_counter = username_obj.posts.count()
