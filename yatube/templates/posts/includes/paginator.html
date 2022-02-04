@@ -5,18 +5,18 @@
       <li class="page-item"><a class="page-link" href="?page=1">Первая</a></li>
       <li class="page-item">
         <a class="page-link" href="?page={{ page_obj.previous_page_number }}">
-          Предыдущая
+        Предыдущая
         </a>
       </li>
     {% endif %}
-    {% for i in page_obj.paginator.page_range %}
-        {% if page_obj.number == i %}
+    {% for i_page in page_obj.paginator.page_range %}
+        {% if page_obj.number == i_page %}
           <li class="page-item active">
-            <span class="page-link">{{ i }}</span>
+            <span class="page-link">{{ i_page }}</span>
           </li>
         {% else %}
           <li class="page-item">
-            <a class="page-link" href="?page={{ i }}">{{ i }}</a>
+            <a class="page-link" href="?page={{ i_page }}">{{ i_page }}</a>
           </li>
         {% endif %}
     {% endfor %}
