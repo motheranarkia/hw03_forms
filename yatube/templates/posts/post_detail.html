@@ -10,9 +10,7 @@
           {% if post.group.title %}
           <li class="list-group-item d-flex justify-content-between align-items-center">
             Группа: {{ post.group }}
-            <a href="{% url 'posts:group_posts' post.group.slug %}">
-            все записи группы
-            </a>
+            <a href="{% url 'posts:group_posts' post.group.slug %}">все записи группы</a>
           </li>
           {% endif %}
           <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -29,9 +27,7 @@
     <article class="col-12 col-md-9">
       <p>{{ post.text }}</p>
       {% if request.user == post.author %}
-      <a class="btn btn-primary" href="{% url 'posts:post_edit' post.id %}">
-        редактировать запись
-      </a>
+      <a class="btn btn-primary" href="{% url 'posts:post_edit' post.id %}">редактировать запись</a>
       {% endif %}
     </article>
   </div>
