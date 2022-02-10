@@ -6,7 +6,7 @@ from ..models import Group, Post
 User = get_user_model()
 
 
-class PostModelTest(TestCase):
+class PostModelTests(TestCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -24,7 +24,10 @@ class PostModelTest(TestCase):
 
     def test_models_have_correct_object_names(self):
         """Проверяем, что у моделей корректно работает __str__."""
-        text = PostModelTest.post.text
-        title = PostModelTest.group.title
-        self.assertEqual(str(self.posts), self.post.text[:15])
-        self.assertEqual(str(self.group), self.group.title)
+        post = PostModelTests.post
+        expected_post_str = post.text[:15]
+        self.assertEqual(expected_post_str, str(post))
+
+        group = PostModelTests.group
+        expected_group_str = group.title
+        self.assertEqual(expected_group_str, str(group))
